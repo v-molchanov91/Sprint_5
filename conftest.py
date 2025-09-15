@@ -1,7 +1,8 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from Sprint_5.data import generate_random_email, BASE_URL, USER_PASSWORD
+from Sprint_5.data import BASE_URL, USER_PASSWORD
+from Sprint_5.helpers import generate_random_email
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Sprint_5.locators import MainPage, RegistrationPage, LoginPage

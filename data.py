@@ -1,5 +1,4 @@
 import random
-import string
 
 
 BASE_URL = "https://qa-desk.stand.praktikum-services.ru"
@@ -18,9 +17,3 @@ CITY = random.choice(
     ]
 )
 CATEGORY = "Книги"
-
-
-def generate_random_email() -> str:
-    prefix = "".join(random.choices(string.ascii_lowercase + string.digits, k=8))
-    domain = "".join(random.choices(string.ascii_lowercase, k=5))
-    return f"{prefix}@{domain}.com"

@@ -1,6 +1,7 @@
 import pytest
 from Sprint_5.locators import MainPage, RegistrationPage, LoginPage
-from Sprint_5.data import *
+from Sprint_5.data import BASE_URL, USER_PASSWORD
+from Sprint_5.helpers import generate_random_email
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -17,6 +18,7 @@ class TestRegistration:
         driver.find_element(*LoginPage.NO_ACC_BTN).click()
 
         email = generate_random_email()
+        wait.until(EC.visibility_of_element_located(LoginPage.INPUT_EMAIL))
         driver.find_element(*LoginPage.INPUT_EMAIL).send_keys(email)
         driver.find_element(*LoginPage.INPUT_PASSWORD).send_keys(USER_PASSWORD)
         driver.find_element(*RegistrationPage.REPEAT_PASSWORD).send_keys(USER_PASSWORD)
